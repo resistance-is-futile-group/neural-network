@@ -6,7 +6,9 @@ Eine Idee wäre es, die einzelnen Farbringe mittels RCNN / object detection zu e
 
 Schritt 1 wäre jedenfalls, die Fläche mit den Ringen zu erkennen. 
 
-→ Ein Problem bei der Farbringerkennung mit RCNN ist, dass über verdrehte Farbringe keine verdrehten Objekt-Bounding-Boxes gezogen werden, weil die immer so wie das Bild ausgerichtet sind.
+→ Ein Problem bei der Farbringerkennung mit RCNN ist, dass über verdrehte Farbringe keine verdrehten Objekt-Bounding-Boxes gezogen werden, weil die immer parallel zum Bild ausgerichtet sind.
+
+→ Alleine die Regionen von den Farbstreifen lassen sich vielleicht auch an Grayscale-Bildern erkennen, wenn sie sich in ihrer Helligkeit vom Widerstand deutlich unterscheiden. Dadurch würde man die Größe des Input-Layers verkleinern können. Die Farbwerte werden dann aus den Bounding-Boxes aus dem originalen farbigen Bild ausgelesen.
 
 → Das [Projekt &bdquo;Fast and Robust Multiple ColorChecker Detectionusing Deep Convolutional Neural Networks&ldquo;](https://arxiv.org/pdf/1810.08639.pdf) macht etwas ganz Ähnliches und ihr neuronales Netz kann anscheinend auch verdrehte ColorChecker erkennen. 
 
